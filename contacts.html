@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameShop - Контакты</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <div class="menu-container" id="menuContainer">
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+                <span>Каталог</span>
+            </div>
+            <nav class="sidebar">
+                <ul>
+                    <li><a href="index.html"><i class="fa-brands fa-playstation"></i> PlayStation</a></li>
+                    <li><a href="index.html"><i class="fa-brands fa-xbox"></i> Xbox</a></li>
+                    <li><a href="index.html"><i class="fa-solid fa-computer"></i> PC</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="logo"><a href="index.html">GameShop</a></div>
+    </div>
+
+    <div class="search-wrapper">
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Поиск игр...">
+        </div>
+    </div>
+
+    <div class="contacts">
+        <a href="contacts.html"><i class="fa-regular fa-user"></i> Контакты</a>
+    </div>
+</header>
+
+<main>
+    <h2 class="section-title">Контакты</h2>
+
+    <div class="contact-info">
+        <p><i class="fa-solid fa-phone"></i> Телефон: +7 (999) 123-45-67</p>
+        <p><i class="fa-solid fa-envelope"></i> Email: info@gameshop.ru</p>
+        <p><i class="fa-solid fa-location-dot"></i> Адрес: Москва, ул. Игровая, 10</p>
+    </div>
+
+    <h3 class="section-title">Обратная связь</h3>
+
+    <form class="contact-form">
+        <label for="name">Имя</label>
+        <input type="text" id="name" placeholder="Ваше имя" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Ваш email" required>
+
+        <label for="message">Сообщение</label>
+        <textarea id="message" rows="5" placeholder="Ваше сообщение" required></textarea>
+
+        <button type="submit" class="btn-buy">Отправить</button>
+    </form>
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.querySelector('.contact-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Спасибо! Ваше сообщение отправлено.');
+            form.reset();
+        });
+
+        const searchInput = document.querySelector('.search-bar input');
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && searchInput.value.trim() !== "") {
+                alert('Поиск по запросу: ' + searchInput.value);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
