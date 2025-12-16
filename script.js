@@ -1,37 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
     const buyButtons = document.querySelectorAll('.btn-buy');
-    const totalElement = document.querySelector('.cart-total');
+    const cartTotal = document.querySelector('.cart-total');
 
-    let totalSum = 0;
+    let total = 0;
 
     buyButtons.forEach(button => {
         button.addEventListener('click', (e) => {
-            e.stopPropagation();
-
             const card = button.closest('.card');
-            const priceElement = card.querySelector('.price');
+            const priceEl = card.querySelector('.price');
+            let price = parseInt(priceEl.innerText.replace(/\s|₽/g, '')); // Получаем число
 
-            let priceText = priceElement.querySelector('.old-price')
-                ? priceElement.innerText.replace(priceElement.querySelector('.old-price').innerText, '').trim()
-                : priceElement.innerText;
+            total += price; // Добавляем к общей сумме
+            cartTotal.innerText = total.toLocaleString('ru-RU') + ' ₽';
 
-            const price = parseInt(priceText.replace(/\D/g, ''));
-
-            totalSum += price;
-            totalElement.innerText = totalSum.toLocaleString('ru-RU') + ' ₽';
-
-            // Ставим кнопку в "В корзине", без сброса
-            button.style.backgroundColor = '#fff';
-            button.style.color = '#000';
+            // Меняем текст кнопки на "В корзине"
             button.innerText = 'В корзине';
-            button.disabled = true; // чтобы нельзя было нажать снова
+            button.disabled = true; // Блокируем кнопку, чтобы повторно не добавлять
         });
     });
 
+    // Простой поиск
     const searchInput = document.querySelector('.search-bar input');
     searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter' && searchInput.value.trim() !== "") {
+        if(e.key === 'Enter' && searchInput.value.trim() !== "") {
             alert('Поиск по запросу: ' + searchInput.value);
         }
     });
+
 });
