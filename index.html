@@ -6,127 +6,118 @@
     <title>GameShop - Магазин видеоигр</title>
     
     <link rel="stylesheet" href="style.css">
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <div class="header-left">
-            <div class="menu-container" id="menuContainer">
-                <div class="hamburger">
-                    <i class="fa-solid fa-bars"></i>
-                    <span>Каталог</span>
-                </div>
-                <nav class="sidebar">
-                    <ul>
-                        <li><a href="#"><i class="fa-brands fa-playstation"></i> PlayStation</a></li>
-                        <li><a href="#"><i class="fa-brands fa-xbox"></i> Xbox</a></li>
-                        <li><a href="#"><i class="fa-solid fa-computer"></i> PC</a></li>
-                    </ul>
-                </nav>
+<header>
+    <div class="header-left">
+        <div class="menu-container" id="menuContainer">
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+                <span>Каталог</span>
             </div>
-            
-            <div class="logo">GameShop</div>
+            <nav class="sidebar">
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-playstation"></i> PlayStation</a></li>
+                    <li><a href="#"><i class="fa-brands fa-xbox"></i> Xbox</a></li>
+                    <li><a href="#"><i class="fa-solid fa-computer"></i> PC</a></li>
+                </ul>
+            </nav>
         </div>
-
-        <div class="search-wrapper">
-            <div class="search-bar">
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                <input type="text" placeholder="Поиск игр...">
-            </div>
-        </div>
-
-        <div class="contacts">
-            <a href="#"><i class="fa-regular fa-user"></i> Контакты</a>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Главная новинка сезона</h1>
-            <p>Уже доступно для предзаказа на всех платформах.</p>
-            <button class="btn-hero">Узнать больше</button>
-        </div>
-    </section>
-
-    <main>
-        <h2 class="section-title">Популярно сейчас</h2>
         
-        <div class="products-grid">
-            <div class="card">
-                <div class="card-image-container">
-                    <div class="card-image placeholder-cyber"><i class="fa-solid fa-robot"></i>
-                    </div>
-                </div>
-                <div class="card-details">
-                    <span class="game-tag">ХИТ ПРОДАЖ</span>
-                    <h3>Cyber Future 2077</h3>
-                    <div class="card-footer">
-                        <p class="price">2 999 ₽</p>
-                        <button class="btn-buy">Купить</button>
-                    </div>
-                </div>
-            </div>
+        <div class="logo">GameShop</div>
+    </div>
 
-            <div class="card">
-                 <div class="card-image-container">
-                    <div class="card-image placeholder-elden">
-                        <i class="fa-solid fa-dungeon"></i>
-                    </div>
-                </div>
-                <div class="card-details">
-                    <span class="game-tag">RPG ГОДА</span>
-                    <h3>Elden Soul</h3>
-                    <div class="card-footer">
-                        <p class="price">3 499 ₽</p>
-                        <button class="btn-buy">Купить</button>
-                    </div>
-                </div>
-            </div>
+    <div class="search-wrapper">
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Поиск игр...">
+        </div>
+    </div>
 
-            <div class="card">
-                 <div class="card-image-container">
-                    <div class="card-image placeholder-gta">
-                        <i class="fa-solid fa-car-side"></i>
-                    </div>
-                </div>
-                <div class="card-details">
-                    <span class="game-tag">БЕСТСЕЛЛЕР</span>
-                    <h3>Grand Auto V</h3>
-                    <div class="card-footer">
-                         <p class="price"><span class="old-price">2000 ₽</span> 1 500 ₽</p>
-                        <button class="btn-buy">Купить</button>
-                    </div>
-                </div>
-            </div>
+    <div class="contacts">
+        <a href="#"><i class="fa-regular fa-user"></i> Контакты</a>
+    </div>
+</header>
 
-            <div class="card">
-                 <div class="card-image-container">
-                    <div class="card-image placeholder-fifa">
-                        <i class="fa-regular fa-futbol"></i>
-                    </div>
-                </div>
-                <div class="card-details">
-                    <span class="game-tag">СПОРТ</span>
-                    <h3>FIFA World</h3>
-                    <div class="card-footer">
-                        <p class="price">4 100 ₽</p>
-                        <button class="btn-buy">Купить</button>
-                    </div>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Главная новинка сезона</h1>
+        <p>Уже доступно для предзаказа на всех платформах.</p>
+        <button class="btn-hero">Узнать больше</button>
+    </div>
+</section>
+
+<main>
+    <h2 class="section-title">Популярно сейчас</h2>
+    
+    <div class="products-grid">
+        <div class="card">
+            <div class="card-image-container">
+                <div class="card-image placeholder-cyber"><i class="fa-solid fa-robot"></i></div>
+            </div>
+            <div class="card-details">
+                <span class="game-tag">ХИТ ПРОДАЖ</span>
+                <h3>Cyber Future 2077</h3>
+                <div class="card-footer">
+                    <p class="price">2 999 ₽</p>
+                    <button class="btn-buy">Купить</button>
                 </div>
             </div>
         </div>
-        <div class="cart-summary">
-    <span>Сумма покупок:</span>
-    <span class="cart-total">0 ₽</span>
-</div>
 
-    </main>
+        <div class="card">
+             <div class="card-image-container">
+                <div class="card-image placeholder-elden"><i class="fa-solid fa-dungeon"></i></div>
+            </div>
+            <div class="card-details">
+                <span class="game-tag">RPG ГОДА</span>
+                <h3>Elden Soul</h3>
+                <div class="card-footer">
+                    <p class="price">3 499 ₽</p>
+                    <button class="btn-buy">Купить</button>
+                </div>
+            </div>
+        </div>
 
-    <script src="script.js"></script>
+        <div class="card">
+             <div class="card-image-container">
+                <div class="card-image placeholder-gta"><i class="fa-solid fa-car-side"></i></div>
+            </div>
+            <div class="card-details">
+                <span class="game-tag">БЕСТСЕЛЛЕР</span>
+                <h3>Grand Auto V</h3>
+                <div class="card-footer">
+                     <p class="price"><span class="old-price">2000 ₽</span> 1 500 ₽</p>
+                    <button class="btn-buy">Купить</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+             <div class="card-image-container">
+                <div class="card-image placeholder-fifa"><i class="fa-regular fa-futbol"></i></div>
+            </div>
+            <div class="card-details">
+                <span class="game-tag">СПОРТ</span>
+                <h3>FIFA World</h3>
+                <div class="card-footer">
+                    <p class="price">4 100 ₽</p>
+                    <button class="btn-buy">Купить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Блок суммы покупок -->
+    <div class="cart-summary">
+        <span>Сумма покупок:</span>
+        <span class="cart-total">0 ₽</span>
+    </div>
+</main>
+
+<script src="script.js"></script>
 </body>
-
 </html>
