@@ -8,18 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', (e) => {
             const card = button.closest('.card');
             const priceEl = card.querySelector('.price');
-            let price = parseInt(priceEl.innerText.replace(/\s|₽/g, '')); // Получаем число
+            let price = parseInt(priceEl.innerText.replace(/\s|₽/g, '')); 
 
-            total += price; // Добавляем к общей сумме
+            total += price; 
             cartTotal.innerText = total.toLocaleString('ru-RU') + ' ₽';
 
-            // Меняем текст кнопки на "В корзине"
+           
             button.innerText = 'В корзине';
-            button.disabled = true; // Блокируем кнопку, чтобы повторно не добавлять
+            button.disabled = true; 
         });
     });
 
-    // Простой поиск
+    
     const searchInput = document.querySelector('.search-bar input');
     searchInput.addEventListener('keypress', (e) => {
         if(e.key === 'Enter' && searchInput.value.trim() !== "") {
@@ -28,3 +28,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
