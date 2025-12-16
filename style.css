@@ -1,0 +1,368 @@
+/* Обнуление стилей и переменные */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Палитра в стиле Epic Games */
+    --bg-main: #121212;      /* Основной фон (очень темный серый) */
+    --bg-secondary: #202020; /* Фон хедера и карточек */
+    --bg-tertiary: #2a2a2a;  /* Фон инпутов и ховеров */
+    
+    --accent-color: #00ff41; /* Ваш зеленый акцент */
+    
+    --text-primary: #ffffff; /* Белый текст */
+    --text-secondary: #b3b3b3; /* Серый текст для описаний */
+    
+    --font-main: 'Inter', sans-serif; /* Современный шрифт */
+    --border-radius: 12px; /* Скругление углов как в EGS */
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+/* --- HEADER --- */
+header {
+    background-color: var(--bg-secondary);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Убрали яркую зеленую рамку снизу для чистоты стиля */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    height: 100%; 
+}
+
+/* Логотип - современный, жирный */
+.logo {
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+/* Меню Каталог (Гамбургер) */
+.menu-container {
+    position: relative;
+    height: 100%; 
+    display: flex; 
+    align-items: center;
+    cursor: pointer;
+}
+
+.hamburger {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-secondary);
+    transition: color 0.3s;
+    font-weight: 600;
+}
+
+.menu-container:hover .hamburger {
+    color: var(--text-primary);
+}
+
+
+.sidebar {
+    position: absolute;
+    top: 70px; 
+    left: -20px; /* Небольшой сдвиг влево */
+    width: 240px;
+    background-color: var(--bg-secondary);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    padding: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease-in-out;
+    z-index: 999;
+}
+
+.menu-container:hover .sidebar {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.sidebar li a i {
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar li a:hover {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+
+.search-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0 40px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-tertiary);
+    border-radius: 30px; 
+    padding: 8px 20px;
+    width: 100%;
+    max-width: 400px;
+    transition: background-color 0.3s;
+}
+
+.search-bar:focus-within {
+    background-color: #3a3a3a;
+}
+
+.search-icon {
+    color: var(--text-secondary);
+    margin-right: 10px;
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    width: 100%;
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+}
+
+/* --- КОНТАКТЫ --- */
+.contacts a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contacts a:hover {
+    color: var(--text-primary);
+}
+
+/* --- HERO SECTION (Баннер) --- */
+.hero {
+    height: 500px;
+    background: linear-gradient(to right, rgba(18,18,18,0.9), rgba(18,18,18,0.3)), url('https://picsum.photos/id/237/1200/600'); /* Плейсхолдер фона */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    margin-bottom: 40px;
+}
+
+.hero-content {
+    max-width: 500px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+.btn-hero {
+    background-color: var(--text-primary);
+    color: var(--bg-main);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-hero:hover {
+    transform: scale(1.05);
+}
+
+
+main {
+    padding: 20px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: var(--text-primary);
+}
+
+/* Сетка товаров */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+
+.card {
+    background-color: transparent; 
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card-image-container {
+    width: 100%;
+    aspect-ratio: 3 / 4; 
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: rgba(255,255,255,0.2);
+    transition: transform 0.3s;
+}
+/* Разные цвета для плейсхолдеров */
+.placeholder-cyber { background: url(https://upload.wikimedia.org/wikipedia/ru/thumb/b/bb/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D0%BE%D0%B9_%D0%B8%D0%B3%D1%80%D1%8B_Cyberpunk_2077.jpg/544px-%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D0%BE%D0%B9_%D0%B8%D0%B3%D1%80%D1%8B_Cyberpunk_2077.jpg);
+  background-size: cover;
+}
+.placeholder-elden { background: url(https://i.redd.it/ph8z8d2ockv81.png);
+background-size: cover;
+}
+.placeholder-gta { background:url(https://i.redd.it/u49av3h94a7z.jpg);
+  background-size: cover;
+}
+.placeholder-fifa { background: url(https://img.championat.com/i/y/z/1658237173590702483.jpg);
+  background-size: cover;
+}
+
+
+.card:hover .card-image {
+    transform: scale(1.05); 
+}
+
+.card-details {
+    padding: 5px;
+}
+
+.game-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    background-color: var(--bg-tertiary);
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-right: 8px;
+}
+
+
+.btn-buy {
+    background-color: var(--accent-color);
+    border: none;
+    color: #000; 
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.btn-buy:hover {
+    background-color: #00cc33;
+}
