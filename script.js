@@ -11,27 +11,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = button.closest('.card');
             const priceElement = card.querySelector('.price');
 
-            // Если есть старая цена, берём только текущую
             let priceText = priceElement.querySelector('.old-price')
                 ? priceElement.innerText.replace(priceElement.querySelector('.old-price').innerText, '').trim()
                 : priceElement.innerText;
 
-            // Убираем все символы кроме цифр
             const price = parseInt(priceText.replace(/\D/g, ''));
 
             totalSum += price;
             totalElement.innerText = totalSum.toLocaleString('ru-RU') + ' ₽';
 
-            const originalText = button.innerText;
+            // Ставим кнопку в "В корзине", без сброса
             button.style.backgroundColor = '#fff';
             button.style.color = '#000';
             button.innerText = 'В корзине';
-
-            setTimeout(() => {
-                button.style.backgroundColor = '';
-                button.style.color = '';
-                button.innerText = originalText;
-            }, 2000);
+            button.disabled = true; // чтобы нельзя было нажать снова
         });
     });
 
