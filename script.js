@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     const buyButtons = document.querySelectorAll('.btn-buy');
     const totalElement = document.querySelector('.cart-total');
 
@@ -10,12 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
 
             const card = button.closest('.card');
-            const priceText = card.querySelector('.price').innerText;
+            const priceElement = card.querySelector('.price');
 
-            // Получаем число из цены (учёт скидок)
-            const price = parseInt(
-                priceText.replace(/\D/g, '')
-            );
+            // Если есть старая цена, берём только текущую
+            let priceText = priceElement.querySelector('.old-price')
+                ? priceElement.innerText.replace(priceElement.querySelector('.old-price').innerText, '').trim()
+                : priceElement.innerText;
+
+            // Убираем все символы кроме цифр
+            const price = parseInt(priceText.replace(/\D/g, ''));
 
             totalSum += price;
             totalElement.innerText = totalSum.toLocaleString('ru-RU') + ' ₽';
@@ -39,6 +41,4 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Поиск по запросу: ' + searchInput.value);
         }
     });
-
 });
-
